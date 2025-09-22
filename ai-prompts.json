@@ -10,14 +10,6 @@
       "lastUpdated": "2025-01-01T00:00:00Z",
       "version": 1
     },
-    "generateSlideStructure": {
-      "id": "generateSlideStructure",
-      "name": "Generate Slide Structure",
-      "template": "Analyze this app and user prompt to determine the optimal TikTok slide structure:\n\nApp Name: {{appName}}\nDescription: {{appDescription}}\nTarget Audience: {{audience}}\nCategory: {{category}}\nMarketing Strategy: {{strategy}}\nuser prompt : {{userPromptSection}} .\nIF THE USER PROMPT IS NOT EMPTY THEN GIVE MORE WEIGHT TO USER PROMPT WHILE CREATING SLIDE STRUCTURE.(MORE PRIORITY TO USER PROMPT IF PRESENT)\nCreate a slide structure that:\n1. Determines optimal number of slides (3-6 slides recommended for TikTok)\n2. Plans what each slide should contain based on the user prompt\n3. Describes what type of image would work best for each slide\n4. Incorporates the user prompt's vision and direction\n\nThe user prompt should heavily influence:\n- The storytelling flow\n- The emotional journey\n- The visual style and mood\n- The number of slides needed\n\nConsider:\n- TikTok attention spans (keep it concise)\n- Strategy requirements\n- User prompt requirements (HIGH PRIORITY)\n- App complexity\n\nRespond in this exact JSON format:\n{\n  \"totalPages\": 4,\n  \"pages\": [\n    {\n      \"pageNumber\": 1,\n      \"purpose\": \"Hook and grab attention based on user prompt\",\n      \"contentType\": \"opening_hook\",\n      \"imageDescription\": \"eye-catching visual that matches user prompt theme\"\n    },\n    {\n      \"pageNumber\": 2,\n      \"purpose\": \"Show main benefit as directed by user prompt\",\n      \"contentType\": \"benefit_highlight\",\n      \"imageDescription\": \"visual that supports the user prompt narrative\"\n    }\n  ]\n}\n\n{{timestamp}}",
-      "variables": ["appName", "appDescription", "audience", "category", "strategy", "userPromptSection", "timestamp"],
-      "lastUpdated": "2025-01-01T00:00:00Z",
-      "version": 1
-    },
     "generatePageContent": {
       "id": "generatePageContent",
       "name": "Generate Page Content",
