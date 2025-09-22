@@ -49,6 +49,14 @@
       "variables": ["appName", "appDescription", "strategy", "userPromptSection", "audience", "timestamp"],
       "lastUpdated": "2025-01-01T00:00:00Z",
       "version": 1
+    },
+    "adaptHookToProduct": {
+    "id": "adaptHookToProduct",
+    "name": "Adapt Hook to Product",
+    "template": "Take this proven marketing hook and adapt it for a specific app:\n\nOriginal Hook: \"{{originalHook}}\"\n\nApp Details:\n- Name: {{appName}}\n- Description: {{appDescription}}\n- Strategy: {{strategy}}\n- Target Audience: {{audience}}\n\nRequirements:\n1. Keep the core psychological trigger that makes the original hook effective\n2. Replace generic terms with {{appName}}-specific language\n3. Maintain the same urgency/emotion level as the original\n4. Make it sound natural and specific to {{appName}}\n5. Keep it under 15 words\n6. Don't use quotes in the response\n7. Ensure it aligns with the {{strategy}} marketing strategy\n\nExamples of good adaptations:\nOriginal: \"Stop scrolling and start earning\"\nAdapted for budgeting app: \"Stop overspending and start saving with BudgetPro\"\n\nOriginal: \"This changed everything for me\"\nAdapted for fitness app: \"FitTracker changed my entire workout routine\"\n\nReturn ONLY the adapted hook text, nothing else.\n\n{{timestamp}}",
+    "variables": ["originalHook", "appName", "appDescription", "strategy", "audience", "timestamp"],
+    "lastUpdated": "2025-01-01T00:00:00Z",
+    "version": 1
     }
   }
 }
