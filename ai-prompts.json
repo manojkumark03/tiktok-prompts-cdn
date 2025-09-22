@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-01T00:00:00Z",
+  "prompts": {
+    "generateAIPrompt": {
+      "id": "generateAIPrompt",
+      "name": "Generate AI Prompt",
+      "template": "Create a creative prompt for generating TikTok slides for this app:\n\nApp: {{appName}}\nDescription: {{appDescription}}\nStrategy: {{strategy}}\nTarget Audience: {{audience}}\n\nGenerate a creative prompt that would help create engaging TikTok slides. The prompt should:\n1. Capture the essence of the app and its unique value\n2. Align with the {{strategy}} strategy\n3. Be specific enough to guide content creation\n4. Include emotional hooks and visual directions\n\nExamples of good prompts:\n- \"Create slides showing how busy professionals transform their chaotic schedules into organized success stories using this productivity app\"\n- \"Show the journey from financial stress to confidence with this budgeting app, focusing on real transformation moments\"\n\nReturn only the prompt text.\n\n{{timestamp}}",
+      "variables": ["appName", "appDescription", "strategy", "audience", "timestamp"],
+      "lastUpdated": "2025-01-01T00:00:00Z",
+      "version": 1
+    },
+    "generateSlideStructure": {
+      "id": "generateSlideStructure",
+      "name": "Generate Slide Structure",
+      "template": "Analyze this app and user prompt to determine the optimal TikTok slide structure:\n\nApp Name: {{appName}}\nDescription: {{appDescription}}\nTarget Audience: {{audience}}\nCategory: {{category}}\nMarketing Strategy: {{strategy}}\n{{userPromptSection}}\n\nCreate a slide structure that:\n1. Determines optimal number of slides (3-6 slides recommended for TikTok)\n2. Plans what each slide should contain based on the user prompt\n3. Describes what type of image would work best for each slide\n4. Incorporates the user prompt's vision and direction\n\nThe user prompt should heavily influence:\n- The storytelling flow\n- The emotional journey\n- The visual style and mood\n- The number of slides needed\n\nConsider:\n- TikTok attention spans (keep it concise)\n- Strategy requirements\n- User prompt requirements (HIGH PRIORITY)\n- App complexity\n\nRespond in this exact JSON format:\n{\n  \"totalPages\": 4,\n  \"pages\": [\n    {\n      \"pageNumber\": 1,\n      \"purpose\": \"Hook and grab attention based on user prompt\",\n      \"contentType\": \"opening_hook\",\n      \"imageDescription\": \"eye-catching visual that matches user prompt theme\"\n    },\n    {\n      \"pageNumber\": 2,\n      \"purpose\": \"Show main benefit as directed by user prompt\",\n      \"contentType\": \"benefit_highlight\",\n      \"imageDescription\": \"visual that supports the user prompt narrative\"\n    }\n  ]\n}\n\n{{timestamp}}",
+      "variables": ["appName", "appDescription", "audience", "category", "strategy", "userPromptSection", "timestamp"],
+      "lastUpdated": "2025-01-01T00:00:00Z",
+      "version": 1
+    },
+    "generatePageContent": {
+      "id": "generatePageContent",
+      "name": "Generate Page Content",
+      "template": "Create content for this TikTok slide:\n\nApp: {{appName}} - {{appDescription}}\nStrategy: {{strategy}}\nThe whole slide for your context: {{slideContext}}\n\nThe page for which text need to be regenerated is: {{pageContext}}\n\nCreate engaging text that:\n1. Matches the page purpose and content type\n2. Uses the {{strategy}} strategy principles\n3. Is concise and punchy (under 15 words)\n4. Flows well from previous pages\n\nReturn only the text content.\n\n{{timestamp}}",
+      "variables": ["appName", "appDescription", "strategy", "slideContext", "pageContext", "timestamp"],
+      "lastUpdated": "2025-01-01T00:00:00Z",
+      "version": 1
+    },
+    "recommendStrategy": {
+      "id": "recommendStrategy",
+      "name": "Recommend Strategy",
+      "template": "Analyze this app and recommend the best marketing strategy:\n\nApp Name: {{appName}}\nDescription: {{appDescription}}\nTarget Audience: {{audience}}\nCategory: {{category}}\n\nAvailable Strategies:\n- FOMO: Creates urgency and exclusivity\n- Hype: Builds excitement and buzz\n- Educational: Teaches and informs\n- Problem-Solution: Addresses specific pain points\n- Comparison: Shows advantages over competitors\n\nAnalyze the app details and recommend ONE strategy that would work best. Consider:\n1. App type and functionality\n2. Target audience demographics\n3. Market positioning\n4. Content potential for TikTok\n\nRespond in this exact JSON format:\n{\n  \"recommendedStrategy\": \"STRATEGY_NAME\",\n  \"confidence\": 85,\n  \"reason\": \"Brief explanation of why this strategy works best for this app\",\n  \"alternativeStrategy\": \"ALTERNATIVE_STRATEGY_NAME\"\n}\n\n{{timestamp}}",
+      "variables": ["appName", "appDescription", "audience", "category", "timestamp"],
+      "lastUpdated": "2025-01-01T00:00:00Z",
+      "version": 1
+    },
+    "generateBundledSlideContent": {
+      "id": "generateBundledSlideContent",
+      "name": "Generate Bundled Slide Content",
+      "template": "Generate complete TikTok slide content for this app:\n\nAPP DETAILS:\nName: {{appName}}\nDescription: {{appDescription}}\nAudience: {{audience}}\nStrategy: {{strategy}}\nTake inspiration from this hook (because it a a proven hook, just modify it as per user's need): \"{{inspirationHook}}\"\n{{userPromptSection}}\n\nEXISTING CONTENT TO AVOID DUPLICATING:\n{{existingContent}}\n\nREQUIREMENTS:\n1. Create 3-6 slides with unique content that doesn't repeat existing material\n2. Generate a hook that takes inspiration from the provided hook and make it specific to this current product\n3. Each slide needs specific, contextual text (max 12 words each)\n4. Generate image search queries that match each slide's mood and content (I'm gonna search those images in vector bucket)\n5. Follow {{strategy}} strategy principles throughout\n\nEnsure all content is fresh and doesn't repeat patterns from existing slides. Make the hook especially unique.\n\n{{timestamp}}",
+      "variables": ["appName", "appDescription", "audience", "strategy", "inspirationHook", "userPromptSection", "existingContent", "timestamp"],
+      "lastUpdated": "2025-01-01T00:00:00Z",
+      "version": 1
+    },
+    "generateSmartHookQuery": {
+      "id": "generateSmartHookQuery",
+      "name": "Generate Smart Hook Query",
+      "template": "Generate the BEST search query to find viral hooks from a 46k vector database:\n\nApp: {{appName}} - {{appDescription}}\nStrategy: {{strategy}}\n{{userPromptSection}}\n\nThe database contains viral marketing hooks. Create a 3-6 word search query that will find:\n1. Hooks matching the {{strategy}} strategy\n2. Content relevant to {{audience}}\n3. Viral/high-performing marketing messages\n4. Content that fits the app's category/purpose\n\nExamples of GOOD queries:\n- \"viral FOMO app marketing\" (for FOMO strategy)\n- \"social proof growth hacks\" (for Hype strategy)\n- \"problem solution transformation\" (for Problem-Solution)\n- \"educational tutorial engagement\" (for Educational)\n\nReturn ONLY the search query (3-6 words max).\n\n{{timestamp}}",
+      "variables": ["appName", "appDescription", "strategy", "userPromptSection", "audience", "timestamp"],
+      "lastUpdated": "2025-01-01T00:00:00Z",
+      "version": 1
+    }
+  }
+}
